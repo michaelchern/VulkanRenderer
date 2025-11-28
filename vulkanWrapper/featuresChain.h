@@ -4,7 +4,7 @@
 #include <set>
 #include <stdexcept>
 
-#include "HardwareWrapperVulkan/HardwareUtils.h"
+#include "base.h"
 
 struct DeviceFeaturesChain {
    public:
