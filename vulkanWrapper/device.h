@@ -23,22 +23,15 @@ namespace LearnVulkan::Wrapper
         }
 
         Device(Instance::Ptr& instance, WindowSurface::Ptr& surface);
-
         ~Device();
 
         void pickPhysicalDevice();
-
         int rateDevice(VkPhysicalDevice device);
-
         bool isDeviceSuitable(VkPhysicalDevice device);
-
         void initQueueFamilies(VkPhysicalDevice device);
-
         void createLogicalDevice();
-
         bool isQueueFamilyComplete();
-
-		VkSampleCountFlags getMaxUsableSampleCount();
+        VkSampleCountFlags getMaxUsableSampleCount();
 
         [[nodiscard]] auto getDevice()             const { return mDevice; }
         [[nodiscard]] auto getPhysicalDevice()     const { return mPhysicalDevice; }
@@ -59,7 +52,6 @@ namespace LearnVulkan::Wrapper
         VkQueue                 mPresentQueue{ VK_NULL_HANDLE };
 
         VkDevice mDevice{ VK_NULL_HANDLE };
-
         VkSampleCountFlagBits mMsaaSamples{ VK_SAMPLE_COUNT_1_BIT };
     };
 }

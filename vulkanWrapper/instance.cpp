@@ -43,8 +43,11 @@ namespace LearnVulkan::Wrapper
 
     Instance::Instance(bool enableValidationLayer)
     {
-        mEnableValidationLayer = enableValidationLayer;
+        if (volkInitialize() != VK_SUCCESS) {
+            throw std::runtime_error("Failed to initialize Volk!");
+        }
 
+        mEnableValidationLayer = enableValidationLayer;
         if (mEnableValidationLayer && !checkValidationLayerSupport())
         {
             throw std::runtime_error("Error: validation layer is not supported!");
@@ -84,6 +87,7 @@ namespace LearnVulkan::Wrapper
         }
 
         setupDebugger();
+        volkLoadInstance(mInstance);
     }
 
     Instance::~Instance()

@@ -2,7 +2,6 @@
 
 namespace LearnVulkan::Wrapper
 {
-
     Device::Device(Instance::Ptr& instance, WindowSurface::Ptr& surface)
     {
         mInstance = instance;

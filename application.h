@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "vulkanWrapper/base.h"
+#include "vulkanWrapper/featuresChain.h"
 #include "vulkanWrapper/instance.h"
 #include "vulkanWrapper/device.h"
 #include "vulkanWrapper/window.h"
@@ -55,6 +56,7 @@ namespace LearnVulkan
     private:
         int                         mCurrentFrame{ 0 };
         Wrapper::Window::Ptr        mWindow{ nullptr };
+        Wrapper::FeaturesChain::Ptr mFeaturesChain{ nullptr };
         Wrapper::Instance::Ptr      mInstance{ nullptr };
         Wrapper::Device::Ptr        mDevice{ nullptr };
         Wrapper::WindowSurface::Ptr mSurface{ nullptr };

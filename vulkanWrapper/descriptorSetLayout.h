@@ -16,9 +16,7 @@ namespace LearnVulkan::Wrapper
         }
 
         DescriptorSetLayout(const Device::Ptr& device);
-
         ~DescriptorSetLayout();
-
         void build(const std::vector<UniformParameter::Ptr>& params);
 
         [[nodiscard]] auto getLayout() const { return mLayout; }
@@ -26,7 +24,6 @@ namespace LearnVulkan::Wrapper
     private:
         VkDescriptorSetLayout mLayout{ VK_NULL_HANDLE };
         Device::Ptr           mDevice{ nullptr };
-
         std::vector<UniformParameter::Ptr> mParams{};
     };
 }

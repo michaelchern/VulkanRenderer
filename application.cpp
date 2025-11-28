@@ -17,12 +17,10 @@ namespace LearnVulkan
 
     void Application::initVulkan()
     {
+		mFeaturesChain = Wrapper::FeaturesChain::create();
         mInstance = Wrapper::Instance::create(true);
-
         mSurface = Wrapper::WindowSurface::create(mInstance, mWindow);
-
         mDevice = Wrapper::Device::create(mInstance, mSurface);
-
         mCommandPool = Wrapper::CommandPool::create(mDevice);
 
         mSwapChain = Wrapper::SwapChain::create(mDevice, mWindow, mSurface, mCommandPool);
